@@ -1,7 +1,3 @@
-
-:Jared Schwartz
-:1/26/2017
-
 @echo off
 cls
 
