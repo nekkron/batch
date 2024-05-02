@@ -43,18 +43,18 @@ endlocal
 CLS
 ECHO 1.Staff Non-domain Machine
 ECHO 2.Staff Domain Machine
-ECHO 3.Troop Machine
+ECHO 3.Public Machine
 ECHO.
 
 CHOICE /C 12345 /M "Enter your choice:"
 
 :: Note - list ERRORLEVELS in decreasing order
-IF ERRORLEVEL 3 GOTO Troop
+IF ERRORLEVEL 3 GOTO Public
 IF ERRORLEVEL 2 GOTO Staffdomain
 IF ERRORLEVEL 1 GOTO Staffnondomain
 
 
-Troop:
+Public:
 :check clean slate version
 @echo off
 FOR /F "tokens=2 delims==" %%I IN (
@@ -94,7 +94,7 @@ cscript ospp.vbs /act
 tzutil /s "W. Europe Standard Time"
 reg query HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation
 
-:Firefox Removal per Patrick
+:FirefoxRemoval
 
 :Firefox (32-bit) 
 IF EXIST "%ProgramFiles%\Mozilla Firefox\uninstall\helper.exe" "%ProgramFiles%\Mozilla Firefox\uninstall\helper.exe" -ms

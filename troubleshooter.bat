@@ -220,5 +220,5 @@ REM Clean-up the temporary files
 rd /S /Q %troublepath%
 ECHO. 
 ECHO Copying %COMPUTERNAME%.txt to the share drive.
-xcopy %LOG% "\\%PCclass%L11SV4\LOGS$\Troubleshooter" /Q /R /Y /Z
+xcopy %LOG% "\\InternalServer\LOGS$\Troubleshooter" /Q /R /Y /Z
 TIMEOUT /t 5
